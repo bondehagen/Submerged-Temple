@@ -27,15 +27,14 @@ public class Map {
     private void CreateNodesFromMap(String map) {
         String[] asciiMap = map.split(System.getProperty("line.separator"));
 
-        int movesLeft = Integer.parseInt(asciiMap[0]); // THIS LINE SHOULD BE REMOVED
-        Width = Integer.parseInt(asciiMap[1]);
-        Height = Integer.parseInt(asciiMap[2]);
+        Width = Integer.parseInt(asciiMap[0]);
+        Height = Integer.parseInt(asciiMap[1]);
 
         nodes = new Node[Width][Height];
 
         for (int x = 0; x < Width; x++) {
             for (int y = 0; y < Height; y++) {
-                nodes[x][y] = new Node(x, y, asciiMap[y + 3].toCharArray()[x]);
+                nodes[x][y] = new Node(x, y, asciiMap[y + 2].toCharArray()[x]);
             }
         }
     }

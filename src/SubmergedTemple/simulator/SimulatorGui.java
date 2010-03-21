@@ -127,8 +127,8 @@ public class SimulatorGui extends Simulator {
 
     private void RenderMap(Graphics2D g) {
         Node[][] Nodes = map.GetNodes();
-        for (int y = 0; y < 32 * tileSize; y = y + tileSize) {
-            for (int x = 0; x < 32 * tileSize; x = x + tileSize) {
+        for (int y = 0; y < map.Height * tileSize; y = y + tileSize) {
+            for (int x = 0; x < map.Width * tileSize; x = x + tileSize) {
                 switch (Nodes[x / tileSize][y / tileSize].GetType()) {
                     case AirBubble:
                         g.drawImage(resources.airBubble, x, y, tileSize, tileSize, frame);
